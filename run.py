@@ -1,19 +1,11 @@
 from random import randint
 
-player_ships = [['']*8 for x in range(8)]
-player_guess = [['']*8 for x in range(8)]
-computer_ships = [['']*8 for x in range(8)]
-computer_guess = [['']*8 for x in range(8)]
 
-let_to_num ={'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7}
-
-def print_board(board):
-    print(' A B C D E F G H')
-    print(' ***************')
-    row_num=1
-    for row in board:
-        print("%d|%s|" % (row_num, "|".join(row)))
-        row_num +=1
+def make_sea():
+    sea = []
+  for _ in range(8):
+    sea.append(["¤"] * 8)
+    return sea
 
 def get_ship_location():
     #Enter a row 1-8
