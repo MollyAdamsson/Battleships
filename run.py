@@ -1,27 +1,41 @@
 from random import randint
 
-
-def make_sea():
+# This creates the board/grid with the append method
+def get_sea():
     sea = []
-  for _ in range(8):
-    sea.append(["¤"] * 8)
+    for _ in range(8):
+        sea.append(["¤"] * 8)
     return sea
 
-def get_ship_location():
-    #Enter a row 1-8
-    row=input('Please write a row 1-8 ').upper()
-    while row not in '12345678':
-        print("Please write down valid row! ")
-        row=input('Enter a ship row 1-8 ')
-    #Enter a column A-H
-    column=input('Enter a ship column A-H ').upper()
-    while column not in 'ABCDEFGH':
-        print("Please write down a valid column! ")
-        column=input('Enter a ship column A-H! ')
-    return int(row)-1,let_to_num[column]
+# This function prints the board
+def print_sea(sea):
+    for row in sea:
+        print((" ").join(row))
+print(" ")
 
-def create_ships():
-    pass
 
-def count_sunk_ships():
-    pass
+
+# This function helps the player to position their ship on the grid, the ship will be marked as "@".
+def get_player_ship_location():
+    valid_ship_row = False
+    valid_ship_col = False
+    print(("*********Write down your wished coordinates*********\nEnter a number between 1 - {}").format(len(sea)))
+    while valid_ship_row == False:
+        try: 
+            player_ship_row = int(
+                input("Enter row to place your ship: "))
+            if (player_ship_row not in range(1, len(sea) + 1)):
+                 print("Not a valid request, you must enter a number between 1 - {}".format(len(sea) + 1))
+                else:
+                    valid_ship_row = True
+                except ValueError:
+                    print("Not a valid request, have another try!")
+                while valid_ship_col == False:
+                    
+
+def random_row():
+
+def random_col():
+
+def get_enemy_ships
+
