@@ -31,7 +31,19 @@ def get_player_ship_location():
                 except ValueError:
                     print("Not a valid request, have another try!")
                 while valid_ship_col == False:
-                    
+                    try:
+                        player_ship_col = int(
+                            input("Enter a column where you want to plave your ship: "))
+                        print(" ")
+                        if (player_ship_col not in range(1, len(sea) + 1)):
+                            print("This is not a valid column, you must enter a number between 1-{}"format(len(sea) + 1))
+                        else:
+                            sea[player_ship_row - 1][player_ship_col - 1] = "@"
+                            valid_ship_col = True
+                        except ValueError:
+                            print("This is not a valid number, have another try!")
+            return sea
+
 
 def random_row():
 
